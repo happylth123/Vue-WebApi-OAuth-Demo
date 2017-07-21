@@ -29,5 +29,7 @@ namespace WebApi_Identity.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebApi_Identity.Models.Customer> Customers { get; set; }
     }
 }
