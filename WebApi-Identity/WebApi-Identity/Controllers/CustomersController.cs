@@ -36,6 +36,7 @@ namespace WebApi_Identity.Controllers
         }
 
         // PUT: api/Customers/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCustomer(int id, Customer customer)
         {
@@ -72,6 +73,7 @@ namespace WebApi_Identity.Controllers
 
         // POST: api/Customers
         [ResponseType(typeof(Customer))]
+        [Authorize]
         public IHttpActionResult PostCustomer(Customer customer)
         {
             if (!ModelState.IsValid)
@@ -87,6 +89,7 @@ namespace WebApi_Identity.Controllers
 
         // DELETE: api/Customers/5
         [ResponseType(typeof(Customer))]
+        [Authorize]
         public IHttpActionResult DeleteCustomer(int id)
         {
             Customer customer = db.Customers.Find(id);

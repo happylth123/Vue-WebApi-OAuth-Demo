@@ -9,6 +9,7 @@ namespace WebApi_Identity
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
+    //// 配置用户名和密码的复杂度，主要用于用户注册时。例如：不允许用户名为纯字母和数字的组合，密码长度至少为6位…。
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
         public ApplicationUserManager(IUserStore<ApplicationUser> store)

@@ -35,6 +35,7 @@ namespace WebApi_Identity
             PublicClientId = "self";
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
+                //// TokenEndpointPath：表示客户端发送验证请求的地址，例如：Web API的站点为www.example.com，验证请求的地址则为www.example.com/token。
                 TokenEndpointPath = new PathString("/Token"),
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
@@ -44,6 +45,7 @@ namespace WebApi_Identity
             };
 
             // Enable the application to use bearer tokens to authenticate users
+            //// 使用Bearer类型的token_type（令牌类型）
             app.UseOAuthBearerTokens(OAuthOptions);
 
             // Uncomment the following lines to enable logging in with third party login providers
